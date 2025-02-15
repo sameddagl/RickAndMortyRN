@@ -43,6 +43,7 @@ const MainTabNavigator = () => {
             return renderTabBarIcon(focused, color, size, route);
           },
           headerShown: false,
+          tabBarActiveTintColor: 'green',
         })}
       >
         <Tab.Screen name="HomeStack" component={HomeStack} />
