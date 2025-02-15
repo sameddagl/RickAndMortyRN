@@ -15,7 +15,13 @@ const Stack = createNativeStackNavigator<HomeStackParamsList>();
 const HomeStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Rick & Morty',
+        }}
+      />
       <Stack.Screen name="Details" component={DetailScreen} />
     </Stack.Navigator>
   );

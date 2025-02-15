@@ -24,6 +24,7 @@ const CharacterItem = ({ character, onPress }: CharacterItemProps) => {
 
     return { ...colorStyle, width: 10, height: 10, borderRadius: 5 };
   };
+
   return (
     <TouchableOpacity onPress={onPress.bind(this, character)} style={styles.characterItem}>
       <Image source={{ uri: character.image }} style={styles.image} />

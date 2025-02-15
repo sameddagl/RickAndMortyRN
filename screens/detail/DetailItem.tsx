@@ -21,8 +21,6 @@ const styles = StyleSheet.create({
   detailContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'space-between',
-    // justifyContent: 'space-between',
   },
   titleText: {
     fontSize: 18,

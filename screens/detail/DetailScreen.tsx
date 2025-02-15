@@ -22,6 +22,7 @@ const DetailScreen = ({ navigation, route }: DetailScreenProps) => {
   const { character } = route.params;
   const dispatch = useDispatch();
   const favoriteCharacters = useSelector((state: RootState) => state.favorites.favoriteCharacters);
+
   const episodes = character.episode.map((episode) => episode.split('/').pop()).join(',');
   const createdDateText = formatDate(character.created);
   const isCharacterFavorite = favoriteCharacters.includes(character);

@@ -5,7 +5,7 @@ type LoadingIndicatorProps = {
   size?: 'small' | 'large';
 };
 
-const LoadingIndicator = ({ size }: LoadingIndicatorProps) => {
+const LoadingIndicator = ({ size = 'large' }: LoadingIndicatorProps) => {
   return <ActivityIndicator size={size} color="blue" style={{ padding: 12 }} />;
 };
 

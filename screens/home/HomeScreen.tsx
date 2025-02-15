@@ -1,7 +1,6 @@
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import CharacterItem from './CharacterItem';
+import CharacterItem from '../../components/CharacterItem';
 import LocationItem from './LocationItem';
 import { getLocationsAndCharacters } from './getLocationsAndCharacters';
 import { Character } from '../../model/Character';
@@ -28,7 +27,7 @@ const HomeScreen = () => {
   };
 
   if (isLoadingLocations && allLocations.length === 0) {
-    return <LoadingIndicator size="large" />;
+    return <LoadingIndicator />;
   }
 
   return (
@@ -46,12 +45,12 @@ const HomeScreen = () => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         onEndReached={loadMoreLocations}
-        onEndReachedThreshold={0.01}
+        onEndReachedThreshold={0.2}
         ListFooterComponent={isFetchingLocations ? <LoadingIndicator size="small" /> : null}
       ></FlatList>
 
       {isLoadingCharacters ? (
-        <LoadingIndicator size="large" />
+        <LoadingIndicator />
       ) : (
         <FlatList
           data={characters}

@@ -7,6 +7,6 @@ export const formatDate = (dateString: string) => {
     year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false, // Ensures 24-hour format
+    hour12: false,
   }).format(date);
 };
