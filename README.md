@@ -23,7 +23,6 @@ A React Native app to explore characters and locations from the Rick and Morty u
 ## Getting Started
 
 ### Prerequisites
-- Node.js
 - Expo CLI
 
 ### Installation
