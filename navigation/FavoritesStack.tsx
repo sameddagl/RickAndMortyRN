@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FavoritesScreen from '../screens/favorites/FavoritesScreen';
 import DetailScreen from '../screens/DetailScreen';
 
-// Create a stack navigator and route paths
 export type FavoritesStackParamsList = {
   Favorites: undefined;
   Details: undefined;

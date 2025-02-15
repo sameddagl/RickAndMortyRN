@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/home/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
 
-// Create a stack navigator and route paths
 export type HomeStackParamsList = {
   Home: undefined;
   Details: undefined;
