@@ -11,13 +11,15 @@ type LocationItemProps = {
 const LocationItem = ({ location, selectedLocation, setSelectedLocation }: LocationItemProps) => {
   return (
     <TouchableOpacity onPress={setSelectedLocation.bind(null, location)} activeOpacity={0.8}>
-      <View
-        style={[
-          styles.locationItem,
-          selectedLocation?.id === location.id && styles.selectedLocation,
-        ]}
-      >
-        <Text style={styles.locationText}>{location.name}</Text>
+      <View style={styles.locationItem}>
+        <Text
+          style={[
+            styles.locationText,
+            selectedLocation?.id === location.id && styles.selectedLocationText,
+          ]}
+        >
+          {location.name}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -30,17 +32,15 @@ const styles = StyleSheet.create({
     height: 44,
     paddingHorizontal: 24,
     margin: 8,
-    backgroundColor: 'blue',
+    backgroundColor: 'lightgray',
     borderRadius: 8,
-    opacity: 0.6,
     justifyContent: 'center',
   },
   locationText: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
-  selectedLocation: {
-    opacity: 1,
-    backgroundColor: 'blue',
+  selectedLocationText: {
+    color: 'green',
   },
 });

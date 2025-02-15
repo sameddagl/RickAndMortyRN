@@ -4,8 +4,14 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 import CharacterItem from './CharacterItem';
 import LocationItem from './LocationItem';
 import { getLocationsAndCharacters } from './getLocationsAndCharacters';
+import { Character } from '../../model/Character';
+import { useNavigation } from '@react-navigation/native';
+import { HomeStackParamsList } from '../../navigation/HomeStack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+export type HomeScreenNavigationProp = NativeStackNavigationProp<HomeStackParamsList, 'Home'>;
 const HomeScreen = () => {
+  const navigation = useNavigation<HomeScreenNavigationProp>();
   const {
     isFetchingLocations,
     isLoadingLocations,
@@ -16,6 +22,10 @@ const HomeScreen = () => {
     handleLocationSelection,
     loadMoreLocations,
   } = getLocationsAndCharacters();
+
+  const onCharacterPress = (character: Character) => {
+    navigation.navigate('Details', { character });
+  };
 
   if (isLoadingLocations && allLocations.length === 0) {
     return <LoadingIndicator size="large" />;
@@ -46,7 +56,7 @@ const HomeScreen = () => {
         <FlatList
           data={characters}
           numColumns={2}
-          renderItem={({ item }) => <CharacterItem character={item} />}
+          renderItem={({ item }) => <CharacterItem character={item} onPress={onCharacterPress} />}
           keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={{ paddingBottom: 64 }}
         />
